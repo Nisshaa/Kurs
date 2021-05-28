@@ -1,0 +1,97 @@
+﻿<Window x:Class="kursMinin.window.order"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kursMinin.window"
+        mc:Ignorable="d"
+        Title="order" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel VerticalAlignment="Bottom">
+            <Button Margin="5" x:Name="CreateOrdBtn" Content="Создание заказа" Click="AddOrder_Click"></Button>
+            <Button Margin="5" x:Name="EditOrdBtn" Content="Изменение Заказа" Click="EditOrder_Click"></Button>
+            <Button Margin="5" x:Name="DelOrdBtn" Content="Удаление Заказа" Click="DelOrd_Click"></Button>
+        </StackPanel>
+
+        <ListView
+            Grid.Row="1"
+            Grid.Column="1"
+            ItemsSource="{Binding OrderList}"
+            x:Name="ProductListView">
+            <ListView.ItemContainerStyle>
+                <Style 
+                    TargetType="ListViewItem">
+                    <Setter 
+                        Property="HorizontalContentAlignment"
+                        Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <!-- рисуем вокруг элемента границу с загругленными углами -->
+                    <Border 
+                BorderThickness="1" 
+                BorderBrush="Black" 
+                CornerRadius="5">
+                        <!-- основная "сетка" из 3-х столбцов: картинка, содержимое, цена -->
+                        <Grid 
+                    Margin="10" 
+                    HorizontalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="64"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image
+                        Width="64" 
+                        Height="64"
+                        Source="{Binding Userman.ImagePreview}" />
+                            <!-- ,TargetNullValue={StaticResource DefaultImage} -->
+
+                            <TextBlock 
+                        Text="{Binding Number}" 
+
+                        Grid.Column="2" 
+                        HorizontalAlignment="Right" 
+                        Margin="10"/>
+
+                            <!-- для содержимого рисуем вложенную сетку -->
+                            <Grid Grid.Column="1" Margin="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <StackPanel
+                            Orientation="Horizontal">
+                                    <TextBlock 
+                                Text="{Binding Userman.FirstName}"/>
+                                    <TextBlock 
+                                Text="{Binding Userman.LastName}"/>
+                                    <TextBlock 
+                                Text="{Binding Userman.Phone}"/>
+                                    <TextBlock 
+                                Text=" | "/>
+                                    <TextBlock 
+                                Text="{Binding Total}"/>
+                                </StackPanel>
+
+                                <TextBlock 
+                            Text="{Binding Data}" 
+                            Grid.Row="1"/>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>
+
