@@ -6,11 +6,16 @@
         xmlns:local="clr-namespace:kursMinin"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    
+   <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
+        <Image 
+        Margin="5"
+        Source="./Logo/Logo.jpg" 
+        VerticalAlignment="Top"/>
         <StackPanel VerticalAlignment="Bottom">
 
             <Label Content="Цена: "/>
@@ -39,10 +44,7 @@
             <Button Margin="5" x:Name="OrderProvid" Content="Заказы" Click="OrdProvidClick"></Button>
             <Button Margin="5" x:Name="ExitBtn" Content="Выход" Click="ExitButtonClick"></Button>
         </StackPanel>
-        <Image 
-        Margin="5"
-        Source="./Logo/Logo.jpg" 
-        VerticalAlignment="Top"/>
+      
         <ListView
             Grid.Row="1"
             Grid.Column="1"

@@ -32,15 +32,15 @@ public partial class fitness_kpEntities : DbContext
     }
 
 
-    public virtual DbSet<Role> Roles { get; set; }
+    public virtual DbSet<Role> Role { get; set; }
 
     public virtual DbSet<Service> Service { get; set; }
 
-    public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+    public virtual DbSet<sysdiagram> sysdiagram { get; set; }
 
     public virtual DbSet<Userman> Userman { get; set; }
 
-    public virtual DbSet<UserManService> UserManServices { get; set; }
+    public virtual DbSet<UserManService> UserManService { get; set; }
 
     public virtual DbSet<Zakazy> Zakazy { get; set; }
 
