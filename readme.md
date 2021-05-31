@@ -51,8 +51,7 @@ https://github.com/Nisshaa/Kurs
 
 
 ### Диаграмма ER:
-
-
+![ER диаграмма](./img/ERD.png)
 
 
 
