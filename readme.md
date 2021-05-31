@@ -47,7 +47,9 @@ https://github.com/Nisshaa/Kurs
 
 ### Предметная область  Фитнес-центр.Подсистема работы с сотрудниками.
 
+### Диаграмма Use Case:
 
+![Use case](./img/UseCase.png)
 
 
 ### Диаграмма ER:
