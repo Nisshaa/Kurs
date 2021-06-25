@@ -541,8 +541,9 @@ namespace kursMinin.window
         </StackPanel>
     </Grid>
 </Window>
+```
 
-    ```
+   
 #### Пример Логики страницы редактирования заказов:
 
 ```cs
