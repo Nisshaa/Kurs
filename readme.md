@@ -167,6 +167,9 @@ https://github.com/Nisshaa/Kurs
         </ListView>
     </Grid>
 </Window>
+```
+
+
 #### Пример Логики главной страницы:
 
 ```cs
